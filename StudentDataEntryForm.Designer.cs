@@ -35,8 +35,8 @@ namespace AttendanceForm
             this.studentAge = new System.Windows.Forms.TextBox();
             this.save = new System.Windows.Forms.Button();
             this.edit = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridViewDataEntry = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDataEntry)).BeginInit();
             this.SuspendLayout();
             // 
             // name
@@ -79,6 +79,7 @@ namespace AttendanceForm
             this.save.TabIndex = 4;
             this.save.Text = "Save";
             this.save.UseVisualStyleBackColor = true;
+            this.save.Click += new System.EventHandler(this.save_Click);
             // 
             // edit
             // 
@@ -89,20 +90,20 @@ namespace AttendanceForm
             this.edit.Text = "Edit";
             this.edit.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGridViewDataEntry
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 58);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(773, 351);
-            this.dataGridView1.TabIndex = 6;
+            this.dataGridViewDataEntry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDataEntry.Location = new System.Drawing.Point(15, 58);
+            this.dataGridViewDataEntry.Name = "dataGridViewDataEntry";
+            this.dataGridViewDataEntry.Size = new System.Drawing.Size(773, 351);
+            this.dataGridViewDataEntry.TabIndex = 6;
             // 
             // StudentDataEntryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewDataEntry);
             this.Controls.Add(this.edit);
             this.Controls.Add(this.save);
             this.Controls.Add(this.studentAge);
@@ -111,7 +112,8 @@ namespace AttendanceForm
             this.Controls.Add(this.name);
             this.Name = "StudentDataEntryForm";
             this.Text = "StudentDataEntryForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.StudentDataEntryForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDataEntry)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,6 +127,6 @@ namespace AttendanceForm
         private System.Windows.Forms.TextBox studentAge;
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.Button edit;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewDataEntry;
     }
 }

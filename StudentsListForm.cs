@@ -19,7 +19,7 @@ namespace AttendanceForm
 
         private void StudentsList_Load(object sender, EventArgs e)
         {
-
+            LoadData();
         }
         public void LoadData()
         {
@@ -28,10 +28,16 @@ namespace AttendanceForm
             {
                 _students = ctx.Students.ToList();
             }
-            
+            studentList.DataSource = _students;
+           
         }
         private void studentList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            //if (studentList.SelectedRows.Count != 0)
+            //{
+            //    DataGridViewRow row = this.studentList.SelectedRows[0];
+            //    row.Cells["StudentId"].Value
+            //}
 
         }
 

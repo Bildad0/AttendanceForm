@@ -34,12 +34,12 @@ namespace AttendanceForm
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
             checkBoxColumn.HeaderText = "Present";
             checkBoxColumn.Name = "Present";
-            dataGridView1.Columns.Insert(1,checkBoxColumn);
+            dataGridView1.Columns.Insert(2,checkBoxColumn);
 
             DataGridViewCheckBoxColumn checkBoxColumn1 = new DataGridViewCheckBoxColumn();
             checkBoxColumn1.HeaderText = "Absent";
             checkBoxColumn1.Name = "Absent";
-            dataGridView1.Columns.Insert(2, checkBoxColumn1);
+            dataGridView1.Columns.Insert(3, checkBoxColumn1);
         }
 
        

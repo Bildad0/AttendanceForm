@@ -29,22 +29,15 @@ namespace AttendanceForm
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.studentList = new System.Windows.Forms.DataGridView();
             this.markAttendance = new System.Windows.Forms.Button();
             this.addStudent = new System.Windows.Forms.Button();
-            this.winFormDBDataSet = new AttendanceForm.WinFormDBDataSet();
-            this.winFormDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.studentList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.winFormDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.winFormDBDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // studentList
             // 
-            this.studentList.AutoGenerateColumns = false;
             this.studentList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.studentList.DataSource = this.winFormDBDataSetBindingSource;
             this.studentList.Location = new System.Drawing.Point(12, 12);
             this.studentList.Name = "studentList";
             this.studentList.Size = new System.Drawing.Size(776, 373);
@@ -71,16 +64,6 @@ namespace AttendanceForm
             this.addStudent.UseVisualStyleBackColor = true;
             this.addStudent.Click += new System.EventHandler(this.addStudent_Click);
             // 
-            // winFormDBDataSet
-            // 
-            this.winFormDBDataSet.DataSetName = "WinFormDBDataSet";
-            this.winFormDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // winFormDBDataSetBindingSource
-            // 
-            this.winFormDBDataSetBindingSource.DataSource = this.winFormDBDataSet;
-            this.winFormDBDataSetBindingSource.Position = 0;
-            // 
             // StudentsListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -90,11 +73,9 @@ namespace AttendanceForm
             this.Controls.Add(this.markAttendance);
             this.Controls.Add(this.studentList);
             this.Name = "StudentsListForm";
-            this.Text = "Form1";
+            this.Text = "Student\'s List";
             this.Load += new System.EventHandler(this.StudentsList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.studentList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.winFormDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.winFormDBDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -104,8 +85,6 @@ namespace AttendanceForm
         private System.Windows.Forms.DataGridView studentList;
         private System.Windows.Forms.Button markAttendance;
         private System.Windows.Forms.Button addStudent;
-        private System.Windows.Forms.BindingSource winFormDBDataSetBindingSource;
-        private AttendanceForm.WinFormDBDataSet winFormDBDataSet;
     }
 }
 
