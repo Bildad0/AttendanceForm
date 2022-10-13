@@ -15,6 +15,8 @@ namespace AttendanceForm
         public StudentDataEntryForm()
         {
             InitializeComponent();
+            this.AutoSize = true;
+            this.AutoSizeMode = AutoSizeMode.GrowAndShrink;
         }
 
         private void StudentDataEntryForm_Load(object sender, EventArgs e)
@@ -30,6 +32,12 @@ namespace AttendanceForm
                 _students = ctx.Students.ToList();
             }
             dataGridViewDataEntry.DataSource = _students;
+
+            //resize the datagrid columns as per the data length
+            for (int i = 0; i < dataGridViewDataEntry.Columns.Count; i++)
+            {
+                dataGridViewDataEntry.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
         }
 
         private void save_Click(object sender, EventArgs e)
@@ -46,6 +54,7 @@ namespace AttendanceForm
                 ctx.SaveChanges();
                 MessageBox.Show("Saved");
                 ResetFields();
+                LoadData();
             }
 
         }

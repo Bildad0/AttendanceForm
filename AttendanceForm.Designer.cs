@@ -32,9 +32,10 @@ namespace AttendanceForm
             this.classLable = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
             this.classComboBox = new System.Windows.Forms.ComboBox();
-            this.dateComboBox = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.attendanceBtn = new System.Windows.Forms.Button();
+            this.lessonDate = new System.Windows.Forms.DateTimePicker();
+            this.attendanceSubmitBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,14 +69,6 @@ namespace AttendanceForm
             this.classComboBox.Size = new System.Drawing.Size(121, 21);
             this.classComboBox.TabIndex = 2;
             // 
-            // dateComboBox
-            // 
-            this.dateComboBox.FormattingEnabled = true;
-            this.dateComboBox.Location = new System.Drawing.Point(282, 29);
-            this.dateComboBox.Name = "dateComboBox";
-            this.dateComboBox.Size = new System.Drawing.Size(121, 21);
-            this.dateComboBox.TabIndex = 3;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -86,21 +79,38 @@ namespace AttendanceForm
             // 
             // attendanceBtn
             // 
-            this.attendanceBtn.Location = new System.Drawing.Point(640, 405);
+            this.attendanceBtn.Location = new System.Drawing.Point(613, 26);
             this.attendanceBtn.Name = "attendanceBtn";
-            this.attendanceBtn.Size = new System.Drawing.Size(117, 33);
+            this.attendanceBtn.Size = new System.Drawing.Size(117, 24);
             this.attendanceBtn.TabIndex = 5;
             this.attendanceBtn.Text = "Attendance Report";
             this.attendanceBtn.UseVisualStyleBackColor = true;
+            // 
+            // lessonDate
+            // 
+            this.lessonDate.Location = new System.Drawing.Point(282, 30);
+            this.lessonDate.Name = "lessonDate";
+            this.lessonDate.Size = new System.Drawing.Size(200, 20);
+            this.lessonDate.TabIndex = 6;
+            // 
+            // attendanceSubmitBtn
+            // 
+            this.attendanceSubmitBtn.Location = new System.Drawing.Point(613, 415);
+            this.attendanceSubmitBtn.Name = "attendanceSubmitBtn";
+            this.attendanceSubmitBtn.Size = new System.Drawing.Size(85, 23);
+            this.attendanceSubmitBtn.TabIndex = 7;
+            this.attendanceSubmitBtn.Text = "Submit";
+            this.attendanceSubmitBtn.UseVisualStyleBackColor = true;
             // 
             // AttendanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.attendanceSubmitBtn);
+            this.Controls.Add(this.lessonDate);
             this.Controls.Add(this.attendanceBtn);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.dateComboBox);
             this.Controls.Add(this.classComboBox);
             this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.classLable);
@@ -118,8 +128,9 @@ namespace AttendanceForm
         private System.Windows.Forms.Label classLable;
         private System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.ComboBox classComboBox;
-        private System.Windows.Forms.ComboBox dateComboBox;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button attendanceBtn;
+        private System.Windows.Forms.DateTimePicker lessonDate;
+        private System.Windows.Forms.Button attendanceSubmitBtn;
     }
 }

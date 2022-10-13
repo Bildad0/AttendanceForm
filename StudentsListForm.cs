@@ -15,6 +15,8 @@ namespace AttendanceForm
         public StudentsListForm()
         {
             InitializeComponent();
+            this.AutoSize = true;
+            this.AutoSizeMode = AutoSizeMode.GrowAndShrink;
         }
 
         private void StudentsList_Load(object sender, EventArgs e)
@@ -29,7 +31,12 @@ namespace AttendanceForm
                 _students = ctx.Students.ToList();
             }
             studentList.DataSource = _students;
-           
+
+            for (int i = 0; i < studentList.Columns.Count; i++)
+            {
+                studentList.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
+
         }
         private void studentList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

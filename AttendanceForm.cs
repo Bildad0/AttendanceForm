@@ -15,6 +15,8 @@ namespace AttendanceForm
         public AttendanceForm()
         {
             InitializeComponent();
+            this.AutoSize = true;
+            this.AutoSizeMode = AutoSizeMode.GrowAndShrink;
         }
 
         private void AttendanceForm_Load(object sender, EventArgs e)
@@ -40,6 +42,11 @@ namespace AttendanceForm
             checkBoxColumn1.HeaderText = "Absent";
             checkBoxColumn1.Name = "Absent";
             dataGridView1.Columns.Insert(3, checkBoxColumn1);
+
+            for (int i = 0; i < dataGridView1.Columns.Count; i++)
+            {
+                dataGridView1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
         }
 
        
