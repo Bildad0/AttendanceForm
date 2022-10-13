@@ -106,6 +106,7 @@ namespace AttendanceForm
             this.Controls.Add(this.classLable);
             this.Name = "AttendanceForm";
             this.Text = "AttendanceForm";
+            this.Load += new System.EventHandler(this.AttendanceForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

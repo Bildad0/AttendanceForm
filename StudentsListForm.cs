@@ -21,5 +21,30 @@ namespace AttendanceForm
         {
 
         }
+        public void LoadData()
+        {
+            List<Student> _students = new List<Student>();
+            using (var ctx = new DatabaseContext())
+            {
+                _students = ctx.Students.ToList();
+            }
+            
+        }
+        private void studentList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void markAttendance_Click(object sender, EventArgs e)
+        {
+            var attendanceForm = new AttendanceForm();
+            attendanceForm.Show();
+        }
+
+        private void addStudent_Click(object sender, EventArgs e)
+        {
+            var dataEntryForm = new StudentDataEntryForm();
+            dataEntryForm.Show();
+        }
     }
 }

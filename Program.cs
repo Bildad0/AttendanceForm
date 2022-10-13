@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +17,7 @@ namespace AttendanceForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Database.SetInitializer(new CreateDatabaseIfNotExists<DatabaseContext>());
             Application.Run(new StudentsListForm());
         }
     }
