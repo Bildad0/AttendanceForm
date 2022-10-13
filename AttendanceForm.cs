@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace AttendanceForm
 {
-    public partial class StudentsList : Form
+    public partial class AttendanceForm : Form
     {
-        public StudentsList()
+        public AttendanceForm()
         {
             InitializeComponent();
-        }
-
-        private void StudentsList_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
