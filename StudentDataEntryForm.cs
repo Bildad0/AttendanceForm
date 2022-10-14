@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -64,6 +65,24 @@ namespace AttendanceForm
         {
             studentName.Text = "";
             studentAge.Text = "";
+        }
+
+
+        //get cell data and cast it to the text input
+        private void getCellData(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dataGridViewDataEntry.SelectedRows.Count != 0)
+            {
+                DataGridViewRow row = this.dataGridViewDataEntry.SelectedRows[0];
+                ArrayList arrayList = new ArrayList();
+
+                for(int i =0; i<3; i++)
+                {
+                    arrayList.Insert(i, row.Cells["StudentName"].Value);
+                }
+                studentName.Text = (string)arrayList[1];
+            }
+
         }
     }
 }

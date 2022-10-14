@@ -97,6 +97,7 @@ namespace AttendanceForm
             this.dataGridViewDataEntry.Name = "dataGridViewDataEntry";
             this.dataGridViewDataEntry.Size = new System.Drawing.Size(773, 351);
             this.dataGridViewDataEntry.TabIndex = 6;
+            this.dataGridViewDataEntry.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.getCellData);
             // 
             // StudentDataEntryForm
             // 
