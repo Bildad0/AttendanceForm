@@ -75,7 +75,7 @@ namespace AttendanceForm
             {
                 foreach(DataGridViewRow row in dataGridViewDataEntry.SelectedRows)
                 {
-                    idtextBox.Text = row.Cells[0].Value.ToString();
+                    idtextBox.Text = row.Cells[0].Value.ToString();//this is a read only texbox
                     studentName.Text = row.Cells[1].Value.ToString();
                     studentAge.Text = row.Cells[2].Value.ToString();
                     
@@ -86,13 +86,14 @@ namespace AttendanceForm
         private void edit_Click(object sender, EventArgs e)
         {
             //Student std = SetValues(Convert.ToInt32(idtextBox.Text), studentName.Text, Convert.ToInt32(studentAge.Text));
+            EditStudent(Convert.ToInt32(idtextBox.Text));
         }
 
         public void EditStudent(int id)
         {
            using(var ctx = new DatabaseContext())
             {
-                var data = ctx.Students.Where(i => i.StudentId == Convert.ToInt32(idtextBox.Text));
+                var data = ctx.Students.Where(i => i.StudentId == id);
 
 
             }
