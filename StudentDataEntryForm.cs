@@ -94,6 +94,7 @@ namespace AttendanceForm
             {
                 var data = ctx.Students.Where(i => i.StudentId == Convert.ToInt32(idtextBox.Text));
 
+
             }
         }
     }
