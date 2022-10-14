@@ -101,6 +101,7 @@ namespace AttendanceForm
             this.attendanceSubmitBtn.TabIndex = 7;
             this.attendanceSubmitBtn.Text = "Submit";
             this.attendanceSubmitBtn.UseVisualStyleBackColor = true;
+            this.attendanceSubmitBtn.Click += new System.EventHandler(this.attendanceSubmitBtn_Click);
             // 
             // AttendanceForm
             // 

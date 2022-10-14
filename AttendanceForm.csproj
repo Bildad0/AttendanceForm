@@ -141,6 +141,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AttendanceClass.cs" />
     <Compile Include="AttendanceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +153,10 @@
     <Compile Include="Migrations\202210130707344_Migrations.cs" />
     <Compile Include="Migrations\202210130707344_Migrations.designer.cs">
       <DependentUpon>202210130707344_Migrations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202210140333592_Migration.cs" />
+    <Compile Include="Migrations\202210140333592_Migration.designer.cs">
+      <DependentUpon>202210140333592_Migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="StudentDataEntryForm.cs">
@@ -174,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202210130707344_Migrations.resx">
       <DependentUpon>202210130707344_Migrations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202210140333592_Migration.resx">
+      <DependentUpon>202210140333592_Migration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

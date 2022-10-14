@@ -15,5 +15,7 @@ namespace AttendanceForm
         }
         public DbSet<Student> Students { get; set; }
 
+        public DbSet<AttendanceClass> AttendanceClasses { get; set; }
+
     }
 }
