@@ -62,6 +62,10 @@ namespace AttendanceForm
                 };
                 GetCheckBoxValue();
 
+                ctx.AttendanceClasses.Add(Attendance);
+
+                //there is a conflict between the two tables on Foreign keys.
+                ctx.SaveChanges();
                 MessageBox.Show("Attendance recorded Succesfully");
             }
         }
@@ -85,6 +89,7 @@ namespace AttendanceForm
                             {
                                 Status = dataGridView1.Rows[roww.Index].Cells[3].Value.ToString(),
                         };
+                            ctx.AttendanceClasses.Add(Attendance);
                         }
                     }
                 }

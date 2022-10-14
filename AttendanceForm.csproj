@@ -102,6 +102,9 @@
     <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.7.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Extensions.Primitives.3.1.7\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportViewer.WinForms.v12.12.0.0.1\lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -148,6 +151,12 @@
     <Compile Include="AttendanceForm.Designer.cs">
       <DependentUpon>AttendanceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AttendanceReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttendanceReportForm.Designer.cs">
+      <DependentUpon>AttendanceReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseContext.cs" />
     <Compile Include="DatabaseConfigaration.cs" />
     <Compile Include="Migrations\202210130707344_Migrations.cs" />
@@ -177,6 +186,10 @@
     <EmbeddedResource Include="AttendanceForm.resx">
       <DependentUpon>AttendanceForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AttendanceReport.rdlc" />
+    <EmbeddedResource Include="AttendanceReportForm.resx">
+      <DependentUpon>AttendanceReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202210130707344_Migrations.resx">
       <DependentUpon>202210130707344_Migrations.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +212,19 @@
       <DependentUpon>StudentsListForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\AttendanceClass.datasource" />
+    <None Include="Properties\DataSources\AttendanceForm.datasource" />
+    <None Include="Properties\DataSources\AttendanceForm.Migrations.Configuration.datasource" />
+    <None Include="Properties\DataSources\AttendanceForm.Migrations.Migration.datasource" />
+    <None Include="Properties\DataSources\AttendanceForm.Migrations.Migrations.datasource" />
+    <None Include="Properties\DataSources\AttendanceForm.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\AttendanceForm.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\DatabaseConfigaration.datasource" />
+    <None Include="Properties\DataSources\DatabaseContext.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\Student.datasource" />
+    <None Include="Properties\DataSources\StudentDataEntryForm.datasource" />
+    <None Include="Properties\DataSources\StudentsListForm.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

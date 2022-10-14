@@ -68,21 +68,33 @@ namespace AttendanceForm
         }
 
 
-        //get cell data and cast it to the text input
-        private void getCellData(object sender, DataGridViewCellEventArgs e)
+        //returns the selected user ID
+        private void GetCellData(object sender, DataGridViewCellEventArgs e)
         {
-            if(dataGridViewDataEntry.SelectedRows.Count != 0)
+            if(dataGridViewDataEntry.Rows.Count > 0)
             {
-                DataGridViewRow row = this.dataGridViewDataEntry.SelectedRows[0];
-                ArrayList arrayList = new ArrayList();
-
-                for(int i =0; i<3; i++)
+                foreach(DataGridViewRow row in dataGridViewDataEntry.SelectedRows)
                 {
-                    arrayList.Insert(i, row.Cells["StudentName"].Value);
+                    idtextBox.Text = row.Cells[0].Value.ToString();
+                    studentName.Text = row.Cells[1].Value.ToString();
+                    studentAge.Text = row.Cells[2].Value.ToString();
+                    
                 }
-                studentName.Text = (string)arrayList[1];
             }
+        }
 
+        private void edit_Click(object sender, EventArgs e)
+        {
+            //Student std = SetValues(Convert.ToInt32(idtextBox.Text), studentName.Text, Convert.ToInt32(studentAge.Text));
+        }
+
+        public void EditStudent(int id)
+        {
+           using(var ctx = new DatabaseContext())
+            {
+                var data = ctx.Students.Where(i => i.StudentId == Convert.ToInt32(idtextBox.Text));
+
+            }
         }
     }
 }
