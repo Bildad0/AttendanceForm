@@ -94,8 +94,26 @@ namespace AttendanceForm
            using(var ctx = new DatabaseContext())
             {
                 var data = ctx.Students.Where(i => i.StudentId == id);
-
-
+                var student = new Student()
+                {
+                    StudentName= studentName.Text, 
+                    StudentAge= int.Parse(studentAge.Text),
+                };
+                if(data !=null)
+                {
+                    //update user student if the field selected is not null
+                    ctx.Entry(student).State = System.Data.Entity.EntityState.Modified;
+                    
+                }
+                else
+                {
+                    //Add new student if the field is null.
+                    ctx.Students.Add(student);
+                }
+                ctx.SaveChanges();
+                MessageBox.Show("Edited");
+                ResetFields();
+                LoadData();
             }
         }
     }

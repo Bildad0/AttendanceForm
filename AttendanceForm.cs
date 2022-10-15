@@ -26,12 +26,12 @@ namespace AttendanceForm
 
         public void LoadData()
         {
-            List<Student> _students = new List<Student>();
+            List<Student> StudentAttendance = new List<Student>();
             using(var ctx = new DatabaseContext())
             {
-                _students = ctx.Students.ToList();
+                StudentAttendance = ctx.Students.ToList();
             }
-            dataGridView1.DataSource = _students;
+            dataGridView1.DataSource = StudentAttendance;
 
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
             checkBoxColumn.HeaderText = "Present";

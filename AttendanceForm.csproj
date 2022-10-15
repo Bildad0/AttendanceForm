@@ -167,6 +167,10 @@
     <Compile Include="Migrations\202210140333592_Migration.designer.cs">
       <DependentUpon>202210140333592_Migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202210151914159_Migrations1.cs" />
+    <Compile Include="Migrations\202210151914159_Migrations1.designer.cs">
+      <DependentUpon>202210151914159_Migrations1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="StudentDataEntryForm.cs">
       <SubType>Form</SubType>
@@ -195,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202210140333592_Migration.resx">
       <DependentUpon>202210140333592_Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202210151914159_Migrations1.resx">
+      <DependentUpon>202210151914159_Migrations1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
