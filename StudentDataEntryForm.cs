@@ -99,10 +99,12 @@ namespace AttendanceForm
                     StudentName= studentName.Text, 
                     StudentAge= int.Parse(studentAge.Text),
                 };
+
                 if(data !=null)
                 {
                     //update user student if the field selected is not null
-                    ctx.Entry(student).State = System.Data.Entity.EntityState.Modified;
+                    ctx.Entry(data).State = System.Data.Entity.EntityState.Modified;
+                    ctx.Students.Attach(student);
                     
                 }
                 else
