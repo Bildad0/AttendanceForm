@@ -65,6 +65,7 @@ namespace AttendanceForm
         {
             studentName.Text = "";
             studentAge.Text = "";
+            idtextBox.Text = "";
         }
 
 
@@ -92,15 +93,7 @@ namespace AttendanceForm
         {
            using(var ctx = new DatabaseContext())
             {
-
-
                 Student student = ctx.Students.Find(id);
-                //var data = ctx.Students.Where(x=> x.StudentId==id);
-                //var student = new Student()
-                //{
-                //    StudentName= studentName.Text, 
-                //    StudentAge= int.Parse(studentAge.Text),
-                //};
                 var data = new Student()
                 {
                     StudentId = id,
