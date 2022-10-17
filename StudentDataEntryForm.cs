@@ -75,7 +75,7 @@ namespace AttendanceForm
             {
                 foreach(DataGridViewRow row in dataGridViewDataEntry.SelectedRows)
                 {
-                    idtextBox.Text = row.Cells[0].Value.ToString();//this is a read only texbox
+                    idtextBox.Text = row.Cells[0].Value.ToString();//this is a read only textbox
                     studentName.Text = row.Cells[1].Value.ToString();
                     studentAge.Text = row.Cells[2].Value.ToString();
                     
@@ -85,35 +85,53 @@ namespace AttendanceForm
 
         private void edit_Click(object sender, EventArgs e)
         {
-            //Student std = SetValues(Convert.ToInt32(idtextBox.Text), studentName.Text, Convert.ToInt32(studentAge.Text));
-            EditStudent(Convert.ToInt32(idtextBox.Text));
+            EditStudent(int.Parse(idtextBox.Text));
         }
 
         public void EditStudent(int id)
         {
            using(var ctx = new DatabaseContext())
             {
-                var data = ctx.Students.Where(i => i.StudentId == id);
-                var student = new Student()
-                {
-                    StudentName= studentName.Text, 
-                    StudentAge= int.Parse(studentAge.Text),
-                };
 
-                if(data !=null)
+
+                Student student = ctx.Students.Find(id);
+                //var data = ctx.Students.Where(x=> x.StudentId==id);
+                //var student = new Student()
+                //{
+                //    StudentName= studentName.Text, 
+                //    StudentAge= int.Parse(studentAge.Text),
+                //};
+                var data = new Student()
                 {
-                    //update user student if the field selected is not null
-                    ctx.Entry(data).State = System.Data.Entity.EntityState.Modified;
-                    ctx.Students.Attach(student);
-                    
-                }
-                else
+                    StudentId = id,
+                    StudentName = studentName.Text,
+                    StudentAge = int.Parse(studentAge.Text),
+                };
+                if (student != null)
                 {
-                    //Add new student if the field is null.
-                    ctx.Students.Add(student);
+
+                    ctx.Entry(student).CurrentValues.SetValues(data);
+                    ctx.Entry(student).State = System.Data.Entity.EntityState.Modified;
+                    MessageBox.Show("Edited");
                 }
                 ctx.SaveChanges();
-                MessageBox.Show("Edited");
+                ResetFields();
+                LoadData();
+            }
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            DeleteUser(int.Parse(idtextBox.Text));
+        }
+
+        public void DeleteUser(int id)
+        {
+        using(var ctx = new DatabaseContext())
+            {
+                Student student = ctx.Students.Find(id);
+                ctx.Students.Remove(student);
+                ctx.SaveChanges();
                 ResetFields();
                 LoadData();
             }
