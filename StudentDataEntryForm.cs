@@ -53,7 +53,7 @@ namespace AttendanceForm
 
                 ctx.Students.Add(Student);
                 ctx.SaveChanges();
-                MessageBox.Show("Saved");
+                MessageBox.Show($" User {studentName.Text} saved");
                 ResetFields();
                 LoadData();
             }
@@ -105,7 +105,7 @@ namespace AttendanceForm
 
                     ctx.Entry(student).CurrentValues.SetValues(data);
                     ctx.Entry(student).State = System.Data.Entity.EntityState.Modified;
-                    MessageBox.Show("Edited");
+                    MessageBox.Show($"User {studentName.Text}  edited successfully");
                 }
                 ctx.SaveChanges();
                 ResetFields();
@@ -125,6 +125,7 @@ namespace AttendanceForm
                 Student student = ctx.Students.Find(id);
                 ctx.Students.Remove(student);
                 ctx.SaveChanges();
+                MessageBox.Show($"User {studentName.Text} deleted successfully");
                 ResetFields();
                 LoadData();
             }

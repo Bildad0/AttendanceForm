@@ -89,7 +89,7 @@ namespace AttendanceForm
             this.edit.Name = "edit";
             this.edit.Size = new System.Drawing.Size(75, 23);
             this.edit.TabIndex = 5;
-            this.edit.Text = "Edit";
+            this.edit.Text = "Update";
             this.edit.UseVisualStyleBackColor = true;
             this.edit.Click += new System.EventHandler(this.edit_Click);
             // 
