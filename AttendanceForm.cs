@@ -96,6 +96,16 @@ namespace AttendanceForm
             }
         }
 
+        private void attendanceBtn_Click(object sender, EventArgs e)
+        {
+            var AttendanceReport = new ReportForm();
+            AttendanceReport.Show();
+        }
 
+        internal class DataSet
+        {
+            public SchemaSerializationMode SchemaSerializationMode { get; internal set; }
+            public string DataSetName { get; internal set; }
+        }
     }
 }

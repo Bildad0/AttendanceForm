@@ -85,6 +85,7 @@ namespace AttendanceForm
             this.attendanceBtn.TabIndex = 5;
             this.attendanceBtn.Text = "Attendance Report";
             this.attendanceBtn.UseVisualStyleBackColor = true;
+            this.attendanceBtn.Click += new System.EventHandler(this.attendanceBtn_Click);
             // 
             // lessonDate
             // 
